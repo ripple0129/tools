@@ -1,3 +1,4 @@
 alias findword="function _findword(){ grep -rn . -e \"\$1\" }; _findword"
 alias delword="function _delword(){ grep -rn . -e \"\$1\" | awk '{split (\$0,a,\":\");print a[1]}' | sort -u | xargs sed -i '' \"s/\$1//g\" }; _delword"
 alias replaceword="function _replaceword(){ grep -rn . -e \"\$1\" | awk '{split (\$0,a,\":\");print a[1]}' | sort -u | xargs sed -i '' \"s/\$1/\$2/g\" }; _replaceword"
+alias dbtunnel="ssh -i ripple.pem -v -N -L 0.0.0.0:3306:dbhost:3306 ubuntu@nextwin.ddns.net"
